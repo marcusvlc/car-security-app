@@ -1,0 +1,40 @@
+.cards-title {
+    font-weight: bolder;
+    color: #2C3E50;
+    font-size: 2.5em;
+}
+
+.cards-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.dark-bg {
+    background-color: #2C3E50;
+}
+
+.dark-bg-icon {
+    filter: invert(19%) sepia(53%) saturate(388%) hue-rotate(168deg) brightness(96%) contrast(88%);
+}
+
+.cards { 
+    width: 100%;
+}
+
+.card-body-title {
+    height: 1rem !important;
+}
+
+.card-container {
+    width: 25vw !important;
+    height: 450px !important;
+}
+
+.card-body-image {
+    height: 250px !important;
+}
+
+.card-body-container {
+    height: 250px !important;
+}

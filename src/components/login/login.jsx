@@ -9,7 +9,7 @@ import { Redirect } from 'react-router'
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {email: '', password: '', redirect: false};
+        this.state = {email: '', password: ''};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,21 +27,16 @@ class Login extends Component {
         login(email, password)
         .then(data => {
             localStorage.setItem('token', data.data.token)
-            this.setState({redirect: true})
-            console.log(this.state)
+            window.location.href = "/dashboard"
         })
         .catch(error => {
-            console.log ('--')
             notifyFailure(error.error)
         })
       }
 
 
     render () {
-        const { email, password, redirect } = this.state;
-        if (redirect) {
-           return <Redirect to="/dashboard" push={true} />
-        }
+        const { email, password } = this.state;
         return (
         <div>
             <Form onSubmit={this.handleSubmit}>

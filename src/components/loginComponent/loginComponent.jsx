@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './loginComponent.css'
-import background from '../../assets/img/login-bg.jpg'
 import Login from '../login/login'
 import Register from '../register/register'
 
