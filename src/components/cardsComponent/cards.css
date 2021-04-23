@@ -29,7 +29,17 @@
 .card-container {
     width: 25vw !important;
     height: 450px !important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
 }
+
+.card-container:hover {
+    transition: all 0.3s ease-in-out;
+    color: white;
+    background-color: #2C3E50;
+    box-shadow: 0 4px 8px 0 rgba(255,255, 255,0.2);
+}
+
 
 .card-body-image {
     height: 250px !important;
@@ -37,4 +47,8 @@
 
 .card-body-container {
     height: 250px !important;
+}
+
+.card-body-text {
+    margin-top: 2em;
 }

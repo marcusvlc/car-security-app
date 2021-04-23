@@ -20,10 +20,10 @@ class Cards extends Component {
                         <Card className="card-container">
                             <Card.Img className="card-body-image" variant="top" src={cars_bg} />
                             <Card.Body className="card-body-container">
-                            <Card.Title className="card-body-title">Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
+                            <Card.Title className="card-body-title">Monitoramento em tempo real</Card.Title>
+                            <Card.Text className="card-body-text">
+                                Cadastre um vídeo ou endereço de camera RTSP para realizar monitoramento em tempo real de placas veiculares.
+                                <br/>Todas as placas detectadas são devidamente salvas em nossa base e você pode consultá-las a qualquer momento.
                             </Card.Text>
                             </Card.Body>
                             {/* <Card.Footer>
@@ -34,7 +34,7 @@ class Cards extends Component {
                             <Card.Img className="card-body-image" variant="top" src={cars_bg} />
                             <Card.Body className="card-body-container">
                             <Card.Title className="card-body-title">Card title</Card.Title>
-                            <Card.Text>
+                            <Card.Text className="card-body-text">
                                 This card has supporting text below as a natural lead-in to additional
                                 content.{' '}
                             </Card.Text>
@@ -47,7 +47,7 @@ class Cards extends Component {
                             <Card.Img className="card-body-image" variant="top" src={cars_bg} />
                             <Card.Body className="card-body-container">
                             <Card.Title className="card-body-title">Card title</Card.Title>
-                            <Card.Text>
+                            <Card.Text className="card-body-text">
                                 This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This card has even longer content than the first to
                                 show that equal height action.
