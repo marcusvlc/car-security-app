@@ -1,16 +1,33 @@
 .navbar-container {
     width: 100%;
     height: 100px;
-    background-color: #2C3E50;
-    color: white;
+    background-color: #29394A;
     vertical-align: middle;
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
 
+.nav-active {
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    background-color: #1A252F;
 }
 
 .navbar-text {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: white;
+}
+
+.navbar-text:hover {
+    text-decoration: none;
 }
 
 .logo-image {
@@ -23,6 +40,10 @@
 .logo-title {
     font-weight: bolder;
     font-size: 1.75em;
+}
+
+.logo-title:hover {
+    color: #1ABC9C;
 }
 
 .logo {
@@ -48,11 +69,13 @@
     margin-right: 20px;
     font-weight: bold;
     font-size: 1.5em;
+    padding: 0.5em;
 }
 
 .list-item:hover {
     cursor: pointer;
-    color: #1ABC9C;
+    background-color: #1ABC9C;
+    border-radius: 10%;
 }
 
 

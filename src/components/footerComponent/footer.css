@@ -7,4 +7,15 @@
     width: 100%;
     height: 60px;
     background-color: #1A252F;
+    color: white;
+    display: table;
+
+}
+
+.copyright {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 80%;
+    font-weight: 400;
 }

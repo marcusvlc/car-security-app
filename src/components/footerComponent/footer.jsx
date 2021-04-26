@@ -6,7 +6,9 @@ class Footer extends Component {
         return (
             <div className="footer-container">
                 <div className="main-footer"></div>
-                <div className="footer-end"></div>
+                <div className="footer-end">
+                    <span className="copyright">Copyright © Marcus Costa - {new Date().getFullYear()}</span>
+                </div>
             </div>
         )
     }

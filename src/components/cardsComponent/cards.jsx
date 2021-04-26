@@ -3,9 +3,24 @@ import './cards.css'
 import engine_icon from '../../../src/assets/img/engine-icon.png'
 import cars_bg from '../../../src/assets/img/cars.jpg'
 import { Card, CardColumns } from 'react-bootstrap'
+import { Redirect } from 'react-router'
 
 class Cards extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            redirect_uri: "", 
+            redirect: false
+        }
+
+        this.handleRedirect = this.handleRedirect.bind(this)
+    }
+
+    handleRedirect (path) {
+        this.setState({redirect_uri: path, redirect: true})
+    }
     render() {
+        if(this.state.redirect) return  <Redirect to={{pathname: this.state.redirect_uri}}/>
         return (
             <div className="cards-container">
                 <span className="cards-title">O QUE DESEJA FAZER?</span>
@@ -17,7 +32,7 @@ class Cards extends Component {
 
                 <div className="cards">
                     <CardColumns>
-                        <Card className="card-container">
+                        <Card className="card-container" onClick={() => this.handleRedirect("/dashboard/stream")}>
                             <Card.Img className="card-body-image" variant="top" src={cars_bg} />
                             <Card.Body className="card-body-container">
                             <Card.Title className="card-body-title">Monitoramento em tempo real</Card.Title>

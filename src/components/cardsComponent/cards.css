@@ -8,6 +8,7 @@
     width: 100%;
     text-align: center;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .dark-bg {
@@ -28,9 +29,12 @@
 
 .card-container {
     width: 25vw !important;
-    height: 450px !important;
+    min-height: 450px !important;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
 }
 
 .card-container:hover {
@@ -46,7 +50,8 @@
 }
 
 .card-body-container {
-    height: 250px !important;
+    max-height: 250px !important;
+
 }
 
 .card-body-text {

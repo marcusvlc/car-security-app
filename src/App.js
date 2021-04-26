@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     const PrivateRoute = ({component: Component, ...rest}) => (
       <Route {...rest} render={props => {
-        const component = this.state.is_auth ? <Component {...props}/> : <Redirect to={{pathname: '/', state: { from: props.location}}}/>
+        const component = this.state.is_auth ?  Component ? <Component  {...props} /> : rest.render(props) : <Redirect to={{pathname: '/', state: { from: props.location}}}/>
         return component
       }} />
     )
@@ -53,7 +53,8 @@ class App extends Component {
           <Route exact path="/" >
               <LoginComponent showLogin={true}/>
           </Route>
-          <PrivateRoute exact path ="/dashboard" component={DashboardComponent} />
+          <PrivateRoute exact path ="/dashboard"  render={(props) => <DashboardComponent {...props} content="main" />}/>
+          <PrivateRoute exact path ="/dashboard/stream" render={(props) => <DashboardComponent {...props} content="stream" />} />
           <Route exact path="/register" >
               <LoginComponent showLogin={false}/>
           </Route>
