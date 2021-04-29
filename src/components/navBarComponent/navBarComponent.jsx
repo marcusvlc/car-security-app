@@ -5,6 +5,14 @@ import {NavLink} from 'react-router-dom'
 
 
 class NavBar extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    handleLogout() {
+        localStorage.removeItem('token');
+        window.location.href = "/"
+    }
 
     componentDidMount() {
         const navbar = document.querySelector('.navbar-container');
@@ -29,7 +37,7 @@ class NavBar extends Component {
                     <span className="list-item navbar-text">Inicio</span>
                     <span className="list-item navbar-text">Contato</span>
                     <span className="list-item navbar-text">Algo</span>
-                    <span className="list-item navbar-text">Algo2</span>
+                    <span className="list-item navbar-text" onClick={this.handleLogout}>Sair</span>
                 </div>
 
             </div>

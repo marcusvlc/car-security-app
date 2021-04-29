@@ -17,6 +17,14 @@
     border-top-right-radius: 20px;
 }
 
+.card-profile:hover {
+  background-color: #1ABC9C;
+  color: #2C3E50;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
 .card-profile {
     width: 340px;
     margin: 50px auto;
@@ -26,6 +34,9 @@
     border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
   }
   .card-profile .card-img-top {
     height: 200px;
@@ -44,9 +55,6 @@
     display: block;
     font-size: 0.6em;
     margin-top: 0.2em;
-  }
-  .card-profile .card-links {
-    margin-bottom: 25px;
   }
   .card-profile .card-links .fa {
     margin: 0 1em;
@@ -74,7 +82,9 @@
   .card-profile .card-links .fa.fa-facebook:hover {
     color: #2d4474;
   }
-
-
+  
+.card-info-text {
+    padding: 1em;
+}
 
 
