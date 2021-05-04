@@ -1,0 +1,94 @@
+.list-stream-container {
+    margin-top: 100px;
+    min-height: 70vh;
+}
+.titles {
+    text-align: center;
+}
+
+.start-icon {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.start-detection {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.start-detection:hover {
+    color: #29394A;
+}
+
+.stream-icon {
+    width: 80px;
+}
+
+body{
+    background:#eee;
+    margin-top:20px;
+}
+
+.panel {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 24px;
+}
+
+.panel-video.panel-colorful {
+  background-color: #3b4146;
+  border-color: #3b4146;
+  color: #fff;
+}
+
+.panel-rtsp.panel-colorful {
+  background-color: #f76c51;
+  border-color: #f76c51;
+  color: #fff;
+}
+
+.panel-image.panel-colorful {
+  background-color: #1ABC9C;
+  border-color: #1ABC9C;
+  color: #fff;
+}
+
+.panel-info.panel-colorful {
+  background-color: #4ebcda;
+  border-color: #4ebcda;
+  color: #fff;
+}
+
+.panel-body {
+  padding: 25px 20px;
+}
+
+.panel hr {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.mar-btm {
+  margin-bottom: 15px;
+}
+
+h2, .h2 {
+  font-size: 1.3em;
+}
+
+.small, small {
+  font-size: 85%;
+}
+
+.text-sm {
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+.text-thin {
+  font-weight: 300;
+}
+
+.text-semibold {
+  font-weight: 600;
+}

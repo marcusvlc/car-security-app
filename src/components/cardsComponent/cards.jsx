@@ -37,7 +37,7 @@ class Cards extends Component {
                             <Card.Body className="card-body-container">
                             <Card.Title className="card-body-title">Monitoramento em tempo real</Card.Title>
                             <Card.Text className="card-body-text">
-                                Cadastre um vídeo ou endereço de camera RTSP para realizar monitoramento em tempo real de placas veiculares.
+                                Cadastre um vídeo, imagem ou endereço de camera RTSP para realizar monitoramento em tempo real de placas veiculares.
                                 <br/>Todas as placas detectadas são devidamente salvas em nossa base e você pode consultá-las a qualquer momento.
                             </Card.Text>
                             </Card.Body>

@@ -55,6 +55,7 @@ class App extends Component {
           </Route>
           <PrivateRoute exact path ="/dashboard"  render={(props) => <DashboardComponent {...props} content="main" />}/>
           <PrivateRoute exact path ="/dashboard/stream" render={(props) => <DashboardComponent {...props} content="stream" />} />
+          <PrivateRoute exact path ="/dashboard/stream/list" render={(props) => <DashboardComponent {...props} content="list_stream" />} />
           <Route exact path="/register" >
               <LoginComponent showLogin={false}/>
           </Route>

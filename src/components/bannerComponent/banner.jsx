@@ -8,7 +8,7 @@ class Banner extends Component {
         return (
             <div className="banner-container">
                 <div className="elements">
-                    <img src={square_logo}/>
+                    <img className="square-logo" src={square_logo}/>
                     <p className="title">CAR SECURITY</p>
                     <div className="divider-custom">
                         <div className="divider-line"></div>
