@@ -34,10 +34,10 @@ class NavBar extends Component {
                 </div>
 
                 <div className="items">
-                    <span className="list-item navbar-text">Inicio</span>
-                    <span className="list-item navbar-text">Contato</span>
-                    <span className="list-item navbar-text">Algo</span>
-                    <span className="list-item navbar-text" onClick={this.handleLogout}>Sair</span>
+                    <NavLink to="/dashboard" className="list-item navbar-text">INÍCIO</NavLink>
+                    <NavLink to="/dashboard/stream/list" className="list-item navbar-text">DETECÇÕES</NavLink>
+                    <NavLink to="/dashboard/plates" className="list-item navbar-text">PLACAS</NavLink>
+                    <span className="list-item navbar-text" onClick={this.handleLogout}>SAIR</span>
                 </div>
 
             </div>

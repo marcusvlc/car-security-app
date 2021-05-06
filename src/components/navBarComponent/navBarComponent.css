@@ -69,13 +69,14 @@
     margin-right: 20px;
     font-weight: bold;
     font-size: 1.5em;
-    padding: 0.5em;
+    padding: 10px;
 }
 
 .list-item:hover {
     cursor: pointer;
     background-color: #1ABC9C;
-    border-radius: 10%;
+    border-radius: 8px;
+    color: white !important;
 }
 
 

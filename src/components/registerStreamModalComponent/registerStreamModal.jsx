@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Modal, Alert, Form, Spinner } from 'react-bootstrap'
 import './registerStreamModal.css'
 import {registerStream} from '../../services/streamService'
+import { notifyFailure, notifySuccess } from '../../services/notificationService'
 
 class RegisterStreamModal extends Component {
     constructor(props) {
@@ -36,6 +37,12 @@ class RegisterStreamModal extends Component {
     formData.append("stream_type", this.props.detectionType);
     const streamData = await registerStream(formData)
     this.setState({is_submiting: false})
+    if(streamData.data && streamData.data.success) {
+      this.props.handleClose()
+      notifySuccess("Sua detecção foi cadastrada com sucesso. Acesse seu menu de detecções para visualizá-la")
+    } else {
+      notifyFailure("Ocorreu um erro ao tentar registrar sua detecção. Tente novamente mais tarde")
+    }
   }
 
   handleFileInput(event) {
