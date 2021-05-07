@@ -74,7 +74,6 @@ class RegisterStreamModal extends Component {
     render() {
         const { stream_url, stream_file, stream_name} = this.state
         const file_pattern = this.getInputPattern()
-        console.log(file_pattern)
         return (
             <>        
               <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={this.props.show} onHide={this.props.handleClose}>

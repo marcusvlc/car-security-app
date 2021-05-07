@@ -2,6 +2,7 @@
     margin-top: 100px;
     min-height: 70vh;
 }
+
 .titles {
     text-align: center;
 }
@@ -43,8 +44,8 @@ body{
 }
 
 .panel-video.panel-colorful {
-  background-color: #3b4146;
-  border-color: #3b4146;
+  background-color: #4a698a;
+  border-color: #4a698a;
   color: #fff;
 }
 
@@ -97,4 +98,19 @@ h2, .h2 {
 
 .text-semibold {
   font-weight: 600;
+}
+
+.page-item.active .page-link {
+  background-color: #2C3E50 !important;
+  border-color: #2C3E50 !important;
+}
+
+.back-text {
+  color: #2C3E50;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.stream-toolbar {
+  margin-bottom: 1em;
 }

@@ -26,7 +26,6 @@ class Register extends Component {
             notifyAlert("Senhas não conferem")
         }
 
-        console.log(email, password, rePassword, name)
         register(email, password, name)
         .then(data => {
             console.log(data)

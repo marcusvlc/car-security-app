@@ -1,13 +1,16 @@
 import React,  { Component } from 'react'
 import { detectOnImage, detectOnVideo } from '../../services/streamService'
 import { DETECTION_API_BASE_URL, VIDEO_DETECTION_URL } from '../../services/apiService'
+import { Spinner } from 'react-bootstrap'
+import './detection.css'
 
 class Detection extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            detected_image: ""
+            detected_image: "",
+            loading: true,
         }
 
         this.handleImageCapture = this.handleImageCapture.bind(this)
@@ -22,8 +25,12 @@ class Detection extends Component {
 
     async handleVideoCapture() {
         const token = localStorage.getItem("token")
-
+        console.log('----------------')
         this.setState({detected_image: `${DETECTION_API_BASE_URL}/${VIDEO_DETECTION_URL}?token=${token}&stream_id=${this.props.stream.id}`})
+    }
+
+    handleImageLoaded() {
+        this.setState({loading: false})
     }
 
     componentDidMount() {
@@ -36,10 +43,19 @@ class Detection extends Component {
     }
 
     render() {
+        const { loading } = this.state
         return (
             <div>
-                <h1>Olá! {this.props.stream.name}</h1>
-                <img id="preview" src={this.state.detected_image}/>
+                <div className={!loading ? 'streams-spinner hidden' : 'streams-spinner'}>
+                    <Spinner animation="border"  />
+                    <p>Carregando detecção, aguarde.</p>
+                </div>
+        
+                <div className={loading ? 'hidden' : ''}>
+                    <h1>Olá! {this.props.stream.name}</h1>
+                    <img width={600} height={400} id="preview" className="stream-img" src={this.state.detected_image} onLoad={this.handleImageLoaded.bind(this)}/>
+                </div>
+
             </div>
 
         )
