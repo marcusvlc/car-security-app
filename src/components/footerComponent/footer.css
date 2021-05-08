@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&family=Viga&display=swap');
 .main-footer {
     width: 100%;
     height: 300px;
     background-color: #2C3E50;
+    display: flex;
 }
 .footer-end {
     width: 100%;
@@ -19,3 +21,37 @@
     font-size: 80%;
     font-weight: 400;
 }
+
+.footer-block {
+    flex: 33%;
+    text-align: center;
+    margin-top: 2em;
+    color: white
+}
+
+.block-title {
+    font-size: 3em;
+    font-family: 'Viga', sans-serif;
+}
+
+.block-text {
+    padding: 2em;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+.block-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.footer-icon {
+    width: 35%;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+.footer-icon:hover {
+    filter: invert(100%);
+}
+

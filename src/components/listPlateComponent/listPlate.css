@@ -1,0 +1,30 @@
+.plates-container {
+    margin-top: 100px;
+    min-height: 55vh;
+}
+
+.panel-plate {
+    background-color: #034f84;
+    color: white;
+}
+
+.plate-icon {
+    width: 120px;
+}
+
+.start-search {
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;    
+}
+
+.start-search:hover {
+    background-color: #1ABC9C;
+    border-radius: 5px;
+}
+
+.plate-subtitle-response {
+    color: #eeeeee9f;
+}

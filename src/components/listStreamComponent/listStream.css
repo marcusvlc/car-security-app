@@ -1,6 +1,6 @@
 .list-stream-container {
     margin-top: 100px;
-    min-height: 70vh;
+    min-height: 55vh;
 }
 
 .titles {
@@ -24,7 +24,10 @@
 }
 
 .start-detection:hover {
-    color: #29394A;
+    padding: 8px;
+    background-color: #EEEEEE;
+    color: #2C3E50;
+    border-radius: 5px;
 }
 
 .stream-icon {
@@ -111,6 +114,39 @@ h2, .h2 {
   font-weight: bolder;
 }
 
+.back-text:hover {
+  color: #1ABC9C;
+}
+
 .stream-toolbar {
   margin-bottom: 1em;
+  margin-left: 2em;
+}
+
+.plate-subtitle {
+  height: 1rem !important;
+}
+
+.empty-objects {
+  margin-top: 5em;
+  color: #b6b6b6;
+  text-align: center;
+  font-size: 2em;
+}
+
+.empty-redirect {
+  color: rgba(63, 63, 177, 0.589) !important;
+  cursor: pointer;
+}
+
+.remove-icon {
+  width: 10%;
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.remove-icon:hover {
+  filter: invert(100%);
 }

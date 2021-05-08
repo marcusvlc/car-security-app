@@ -1,0 +1,30 @@
+.modal-title {
+    height: 2rem !important;
+}
+
+.no-info-content {
+    color: #B6BDD0;
+    text-align: center;
+}
+
+.plate-topic {
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.plate-topic-response {
+    font-size: 1.5em;
+}
+
+.plate-info-row:nth-child(odd) {
+    background-color: #EEEEEE;
+}
+
+.stolen {
+    color: red;
+}
+
+.not-stolen {
+    color: green;
+}
+

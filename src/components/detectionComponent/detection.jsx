@@ -51,8 +51,8 @@ class Detection extends Component {
                     <p>Carregando detecção, aguarde.</p>
                 </div>
         
-                <div className={loading ? 'hidden' : ''}>
-                    <h1>Olá! {this.props.stream.name}</h1>
+                <div className={loading ? 'hidden detector-container' : 'detector-container'}>
+                    <h1>Realizando detecção em: {this.props.stream.name}</h1>
                     <img width={600} height={400} id="preview" className="stream-img" src={this.state.detected_image} onLoad={this.handleImageLoaded.bind(this)}/>
                 </div>
 

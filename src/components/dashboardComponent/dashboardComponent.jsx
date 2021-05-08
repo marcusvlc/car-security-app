@@ -5,6 +5,7 @@ import Cards from '../cardsComponent/cards'
 import Footer from '../footerComponent/footer'
 import Stream from '../streamComponent/stream'
 import ListStream from '../listStreamComponent/listStream'
+import ListPlate from '../listPlateComponent/listPlate'
 
 class DashboardComponent extends Component {
     constructor(props) {
@@ -17,6 +18,8 @@ class DashboardComponent extends Component {
                 return <Stream/>
             case 'list_stream':
                 return <ListStream/>
+            case 'list_plate':
+                return <ListPlate/>
             default:
                 return <div><Banner/> <Cards/></div>
 

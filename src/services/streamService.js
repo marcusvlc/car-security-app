@@ -2,7 +2,9 @@ import axios from 'axios'
 import {DETECTION_API_BASE_URL} from './apiService'
 
 const REGISTER_STREAM_URL = 'stream/register'
+const DELETE_STREAM_URL = 'stream/delete'
 const LIST_ALL_STREAMS_URL = 'stream/all'
+const LIST_STREAM_INFORMATION = 'stream'
 const DETECT_ON_IMAGE = 'detection/image'
 // const DETECT_ON_VIDEO = 'detection/video'
 
@@ -16,9 +18,27 @@ export const registerStream = (formData) => {
     })
 }
 
+export const deleteStream = (stream_id) => {
+  const token = localStorage.getItem('token')
+  return axios.post(`${DETECTION_API_BASE_URL}/${DELETE_STREAM_URL}`, {stream_id}, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+  })
+}
+
 export const getAllStreams = (page) => {
   const token = localStorage.getItem('token')
   return axios.get(`${DETECTION_API_BASE_URL}/${LIST_ALL_STREAMS_URL}?page=${page}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+  })
+}
+
+export const getStreamInformation = (stream_id) => {
+  const token = localStorage.getItem('token')
+  return axios.get(`${DETECTION_API_BASE_URL}/${LIST_STREAM_INFORMATION}?stream_id=${stream_id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

@@ -5,16 +5,6 @@ import { isAuthenticated } from './services/loginService'
 import DashboardComponent from './components/dashboardComponent/dashboardComponent'
 import React, { Component } from "react";
 
-// const PrivatexRoute = ({component: Component, ...rest}) => (
-//   <Route {...rest} render={props => (
-//     isAuthenticated() ? (
-//       <Component {...props}/>
-//     ) : (
-//       <Redirect to={{pathname: '/', state: { from: props.location}}}/>
-//     )
-//   )} />
-// )
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -56,6 +46,7 @@ class App extends Component {
           <PrivateRoute exact path ="/dashboard"  render={(props) => <DashboardComponent {...props} content="main" />}/>
           <PrivateRoute exact path ="/dashboard/stream" render={(props) => <DashboardComponent {...props} content="stream" />} />
           <PrivateRoute exact path ="/dashboard/stream/list" render={(props) => <DashboardComponent {...props} content="list_stream" />} />
+          <PrivateRoute exact path ="/dashboard/plates" render={(props) => <DashboardComponent {...props} content="list_plate" />} />
           <Route exact path="/register" >
               <LoginComponent showLogin={false}/>
           </Route>

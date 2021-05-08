@@ -7,8 +7,13 @@ import rtsp from '../../../src/assets/img/rtsp.png'
 import image from '../../../src/assets/img/picture.png'
 import start from '../../../src/assets/img/start.png'
 import engine_icon from '../../../src/assets/img/engine-icon.png'
+import trash_icon from '../../../src/assets/img/trash.png'
 import { Container, Row, Col, Spinner, Pagination } from 'react-bootstrap'
 import Detection from '../detectionComponent/detection'
+import { Redirect } from 'react-router'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import {deleteStream} from '../../services/streamService'
 
 
 
@@ -22,12 +27,49 @@ class ListStream extends Component {
             paginate_itens: [],
             total_pages: 0,
             current_stream: undefined,
+            redirect_uri: "",
+            redirect: false,
+            swal: withReactContent(Swal),
         }
 
         this.handleOpenDetection = this.handleOpenDetection.bind(this)
         this.getPageTitle = this.getPageTitle.bind(this)
         this.setPagination = this.setPagination.bind(this)
         this.handleBack = this.handleBack.bind(this)
+        this.handleRedirect = this.handleRedirect.bind(this)
+        this.handleDeleteStream = this.handleDeleteStream.bind(this)
+    }
+
+    handleRedirect (path) {
+        this.setState({redirect_uri: path, redirect: true})
+    }
+
+    handleDeleteStream(stream_id) {
+        const WarningData = {
+            title: "Deseja deletar essa stream?",
+            type: "warning",
+            icon: "warning",
+            footer: ""
+          };
+
+        Swal.fire({
+            ...WarningData,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Sim, desejo excluir',
+            onOpen: () => {
+                // code
+            }
+        }).then((result) => {
+            if (result.value) {
+                this.setState({loading: true})
+                deleteStream(stream_id).then((data) => {
+                    window.location.reload(true)
+                })
+            }
+        });
     }
 
     getWidgetIcon(stream) {
@@ -70,7 +112,6 @@ class ListStream extends Component {
         this.setState({loading: true})
         const streams = await getAllStreams(number)
         this.setState({current_page: number, streams: streams.data.data, loading: false})
-        console.log(this.state)
     }
 
     setPagination(totalPages) {
@@ -95,6 +136,7 @@ class ListStream extends Component {
 
     render() {
         const {loading, current_stream, paginate_itens} = this.state
+        if(this.state.redirect) return  <Redirect to={{pathname: this.state.redirect_uri}}/>
 
         return (
             <div className="list-stream-container">
@@ -124,35 +166,42 @@ class ListStream extends Component {
                                 <Detection stream={current_stream}/>
                             </div>
                         :
-                            <Container>
-                                <Row>
-                                {this.state.streams.map( (stream, index) => (
-                                    <Col key={index} sm={3}>
-                                        <div className={`panel panel-${stream.stream_type} panel-colorful`}>
-                                            <div className="panel-body text-center">
-                                                <p className="text-uppercase mar-btm text-sm">{stream.name}</p>
-                                                <hr/>
-                                                <img className="stream-icon" src={this.getWidgetIcon(stream)}/>
-                                                <hr/>
-                                                <p className="h2 text-thin">{this.getWidgetName(stream)}</p>
-                                                <small onClick={() => this.handleOpenDetection(stream)} className="start-detection"><img className="start-icon" src={start}/>Iniciar detecção</small>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                ))}
-                                </Row>
-                                <Col md={{ span: 5, offset: 5 }} >
-                                    <Pagination>
-                                        {
-                                            Array(this.state.total_pages).fill(0).map( (value, index) => (
-                                                <Pagination.Item key={index+1} onClick={() => this.handlePageClick(index+1)} active={index+1 === this.state.current_page}>
-                                                {index+1}
-                                            </Pagination.Item>
-                                            ))
-                                        }
-                                    </Pagination>
-                                </Col>
-                            </Container>
+                           this.state.streams.length == 0 ? 
+                                <div className="empty-objects">
+                                    <span className="empty-warning">Não encontramos nenhuma stream cadastrada. <br/><a onClick={() => this.handleRedirect("/dashboard/stream")} className="empty-redirect">Que tal registrar uma?</a></span>
+                                </div>
+                           :
+
+                           <Container>
+                           <Row>
+                           {this.state.streams.map( (stream, index) => (
+                               <Col key={index} sm={3}>
+                                   <div className={`panel panel-${stream.stream_type} panel-colorful`}>
+                                       <div className="panel-body text-center">
+                                           <img onClick={() => this.handleDeleteStream(stream.id)} className="remove-icon" src={trash_icon}/>
+                                           <p className="text-uppercase mar-btm text-sm">{stream.name}</p>
+                                           <hr/>
+                                           <img className="stream-icon" src={this.getWidgetIcon(stream)}/>
+                                           <hr/>
+                                           <p className="h2 text-thin">{this.getWidgetName(stream)}</p>
+                                           <small onClick={() => this.handleOpenDetection(stream)} className="start-detection"><img className="start-icon" src={start}/>Iniciar detecção</small>
+                                       </div>
+                                   </div>
+                               </Col>
+                           ))}
+                           </Row>
+                           <Col md={{ span: 5, offset: 5 }} >
+                               <Pagination>
+                                   {
+                                       Array(this.state.total_pages).fill(0).map( (value, index) => (
+                                           <Pagination.Item key={index+1} onClick={() => this.handlePageClick(index+1)} active={index+1 === this.state.current_page}>
+                                           {index+1}
+                                       </Pagination.Item>
+                                       ))
+                                   }
+                               </Pagination>
+                           </Col>
+                       </Container>
                     }
             </div>
         )

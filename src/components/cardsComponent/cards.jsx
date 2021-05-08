@@ -45,27 +45,27 @@ class Cards extends Component {
                             <small className="text-muted">Last updated 3 mins ago</small>
                             </Card.Footer> */}
                         </Card>
-                        <Card className="card-container">
-                            <Card.Img className="card-body-image" variant="top" src={cars_bg} />
+                        <Card className="card-container" onClick={() => this.handleRedirect("/dashboard/stream/list")}>
+                            <Card.Img className="card-body-image" variant="top" src="https://www.clinicalomics.com/wp-content/uploads/2020/03/AI-1156616255-scaled.jpg" />
                             <Card.Body className="card-body-container">
-                            <Card.Title className="card-body-title">Card title</Card.Title>
+                            <Card.Title className="card-body-title">Minhas detecções</Card.Title>
                             <Card.Text className="card-body-text">
-                                This card has supporting text below as a natural lead-in to additional
-                                content.{' '}
+                                Todas suas detecções cadastradas ficam salvas em nosso sistema e você pode iniciá-las 
+                                a qualquer momento. Clique aqui para visualizar todas suas detecções.
                             </Card.Text>
                             </Card.Body>
                             {/* <Card.Footer>
                             <small className="text-muted">Last updated 3 mins ago</small>
                             </Card.Footer> */}
                         </Card>
-                        <Card className="card-container">
-                            <Card.Img className="card-body-image" variant="top" src={cars_bg} />
+                        <Card className="card-container" onClick={() => this.handleRedirect("/dashboard/plates")}>
+                            <Card.Img className="card-body-image" variant="top" src="https://img.17qq.com/images/nmoohnhcmlv.jpeg" />
                             <Card.Body className="card-body-container">
-                            <Card.Title className="card-body-title">Card title</Card.Title>
+                            <Card.Title className="card-body-title">Minhas placas</Card.Title>
                             <Card.Text className="card-body-text">
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to
-                                show that equal height action.
+                                Ao realizar detecções, eventualmente, o nosso sistema irá capturar automaticamente algumas placas veículares. 
+                                Todas as placas detectadas que possuírem uma legibilidade serão salvas em nossos sistema e você pode 
+                                consultá-las a qualquer momento. Clique aqui para acessar sua página de placas.
                             </Card.Text>
                             </Card.Body>
                             {/* <Card.Footer>

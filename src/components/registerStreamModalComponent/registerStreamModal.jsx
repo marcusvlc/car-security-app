@@ -77,7 +77,7 @@ class RegisterStreamModal extends Component {
         return (
             <>        
               <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={this.props.show} onHide={this.props.handleClose}>
-                <Modal.Header className="modal-header" closeButton>
+                <Modal.Header className="modal-stream-header" closeButton>
                   <span className="modal-title">Registro de detecção</span>
                 </Modal.Header>
                 <Modal.Body>
