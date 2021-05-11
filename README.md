@@ -30,3 +30,5 @@ Também é necessário as seguintes tecnologias para prosseguir:
  yarn start
 ```
 
+Após isso, a aplicação estará executando por padrão em http://localhost:3000
+
