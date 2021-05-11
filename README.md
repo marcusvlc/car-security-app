@@ -7,13 +7,13 @@
   <b>Car Security</b>
 </p>
 
-O car security é uma aplicação web desenvolvida como trabalho de conclusão de curso do aluno Marcus Vinícius Leite Costa, pela Universidade Federal de Campina Grande.
+O Car Security é uma aplicação web desenvolvida como trabalho de conclusão de curso do aluno Marcus Vinícius Leite Costa, pela Universidade Federal de Campina Grande.
 A aplicação tem como objetivo suplementar a segurança veicular em locais públicos e privados, fornecendo um algoritmo capaz de automaticamente detectar placas veiculares em imagens, vídeos e câmeras. A aplicação também permite buscar mais informações a respeito das placas detectadas.
 
 
 ## Antes de executar...
 
-Para total funcionamento da aplicação, é necessário também estar executando o módulo de detecção, que pode ser encontrado aqui.
+Para total funcionamento da aplicação, é necessário também estar executando o módulo de detecção, que pode ser encontrado [aqui](https://github.com/marcusvlc/carsecurity-detection/tree/master)https://github.com/marcusvlc/carsecurity-detection/tree/master.
 Também é necessário as seguintes tecnologias para prosseguir:
 - npm ou yarn
 
