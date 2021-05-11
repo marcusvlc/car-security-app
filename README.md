@@ -13,7 +13,7 @@ A aplicação tem como objetivo suplementar a segurança veicular em locais púb
 
 ## Antes de executar...
 
-Para total funcionamento da aplicação, é necessário também estar executando o módulo de detecção, que pode ser encontrado [aqui](https://github.com/marcusvlc/carsecurity-detection/tree/master)https://github.com/marcusvlc/carsecurity-detection/tree/master.
+Para total funcionamento da aplicação, é necessário também estar executando o módulo de detecção, que pode ser encontrado [aqui](https://github.com/marcusvlc/carsecurity-detection/tree/master).
 Também é necessário as seguintes tecnologias para prosseguir:
 - npm ou yarn
 
